@@ -1,4 +1,15 @@
+/**
+ * @type {import('webpack').Configuration}
+ */
+const path = requrire('path')
+
 module.exports = {
+  resolve: {
+    alias: {
+      // '@views': path.resolve(__dirname, 'src/views'),
+      // '@components': path.resolve(__dirname, 'src/component')
+    }
+  },
   module: {
     rules: [
       {

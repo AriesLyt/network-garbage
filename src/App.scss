@@ -1,27 +1,5 @@
 .App {
-  text-align: center;
-
-  .add-garbage {
-    width: 240px;
-    height: 80px;
-    margin-top: 20px;
-    background-color: white;
-    // border: 1px solid black;
-    border: none;
-    border-radius: 10px;
-    filter: drop-shadow(rgb(190, 188, 188) 1px 1px 3px);
-
-    transition: all .2s;
-
-    font-size: 24px;
-    vertical-align: middle;
-
-    &:hover,&:focus{
-      box-shadow: inset 0px 0px 4px -1px rgb(94, 93, 93);
-      filter: none;
-      font-size: 22px;
-    }
-  }
+  
 }
 
 
