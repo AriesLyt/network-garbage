@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 // component
-import GarMain from "@views/main";
+import GarMain from "@views/index";
 
 export default function MRoute() {
     return (

@@ -1,5 +1,7 @@
 const path = require('path');
 const CracoAlias = require('craco-alias')
+const CracoLessPlugin = require('craco-less')
+
 module.exports = {
   webpack: {
     alias: {
@@ -9,15 +11,38 @@ module.exports = {
   },
   plugins: [
     {
-        plugin: CracoAlias,
-        options: {
-            source: 'tsconfig',
-            baseUrl: '.',
-            tsConfigPath: "./paths.json"
-        }
-    }
+      plugin: CracoAlias,
+      options: {
+        source: 'tsconfig',
+        baseUrl: '.',
+        tsConfigPath: "./paths.json"
+      }
+    },
+    {
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            modifyVars: { '@primary-color': '#1DA57A' },
+            javascriptEnabled: true,
+          },
+        },
+      },
+    },
   ],
   resolve: {
-      extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json']
   },
+  devServer: {
+    proxy: {
+      "/api": {
+        // target: "http://baidu.com",
+        target: 'http://192.168.14.55:10086',
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": ""
+        }
+      }
+    }
+  }
 };

@@ -17,7 +17,16 @@ module.exports = {
         use: [
           'style-loader', 'css-loader', 'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.less$/i,
+        use: [
+          // compiles Less to CSS
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
     ]
   }
 }

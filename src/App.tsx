@@ -1,6 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import './App.less';
+
+//antd
+import 'antd/dist/antd.less'
 
 import TopNav from '@components/topNav';
 

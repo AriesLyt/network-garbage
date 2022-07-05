@@ -1,6 +1,8 @@
+import "./index.less"
+
 export default function TopNav() {
     return (
-        <div>
+        <div className="topnav-wrap">
             topnav
         </div>
     )
