@@ -1,4 +1,4 @@
-import React from 'react';
+// import React, { useEffect } from 'react';
 import './App.less';
 
 //antd
@@ -8,6 +8,9 @@ import TopNav from '@components/topNav';
 
 // route
 import MRoute from './route/route';
+
+// css
+// import './assets/css/variables.less'
 
 function App() {
   
