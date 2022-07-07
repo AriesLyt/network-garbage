@@ -8,26 +8,31 @@ interface props {
 }
 
 export default function RightNav({ rightShow, setRightShow }: props) {
+
+  const toLink = (link: string): void => {
+    console.log(link)
+  } 
+
   return (
     <>
       <div className={rightShow ? "right-nav-bg is-active-rnav" : "right-nav-bg"} onClick={()=>setRightShow(false)} >
-        <div className="right-nav-wrap">
+      </div>
+      <div className={rightShow ? "right-nav-wrap is-active-rnav" : "right-nav-wrap"}>
           <ul className="nav-ul">
-            <li>
+            <li onClick={()=>toLink('/')}>
               首页
             </li>
-            <li>
+            <li onClick={()=>toLink('Show Show Way')}>
               Show Show Way
             </li>
-            <li>
+            <li onClick={()=>toLink('Can Can Need')}>
               Can Can Need
             </li>
-            <li>
+            <li onClick={()=>toLink('Other')}>
               Other
             </li>
           </ul>
         </div>
-      </div>
     </>
   )
 }

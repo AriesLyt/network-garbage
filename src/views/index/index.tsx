@@ -132,9 +132,9 @@ const GarMain: React.FC = () => {
     <div>
       <div className="garmain-wrap">
         <div>
-          <button className='add-garbage' onClick={() => {
-          setVisible(true);
-        }}> 网络垃圾桶 </button>
+          <div className='add-garbage' onClick={() => {
+            setVisible(true);
+          }}> 网络垃圾桶 </div>
         </div>
         <div className='garmain-text'>
           仅个人用途，存放图片

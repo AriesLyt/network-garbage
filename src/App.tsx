@@ -10,7 +10,7 @@ import TopNav from '@components/topNav';
 import MRoute from './route/route';
 
 // css
-// import './assets/css/variables.less'
+import "./assets/css/media.less"
 
 function App() {
   

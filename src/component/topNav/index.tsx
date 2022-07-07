@@ -24,7 +24,14 @@ export default function TopNav() {
 
   const [rightShow, setRightShow] = useState<boolean>(false)
 
+  const [iconClass, setIconClass] = useState<string []>(['nav-icon'])
+
   function changeMoNavShow(show = false) {
+    if(show){
+      setIconClass(['nav-icon', 'is-checked'])
+    }else{
+      setIconClass(['nav-icon'])
+    }
     setRightShow(show)
   }
 
@@ -32,7 +39,7 @@ export default function TopNav() {
     <>
       <div className={navClass.join(" ")} >
         <ul className="nav-ul">
-          <li onClick={() => {changeMoNavShow(true)}}>
+          <li>
             首页
           </li>
           <li>
@@ -45,6 +52,9 @@ export default function TopNav() {
             Other
           </li> */}
         </ul>
+        <span className={iconClass.join(" ")}  onClick={() => {changeMoNavShow(true)}}>
+          isIcon
+        </span>
       </div>
       <RightNav rightShow={rightShow} setRightShow={changeMoNavShow} />
     </>
