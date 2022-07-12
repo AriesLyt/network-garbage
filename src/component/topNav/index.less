@@ -1,9 +1,9 @@
 .topnav-wrap {
   position: absolute;
-  display: grid;
+  // display: grid;
   top: 0;
   z-index: 1;
-  align-items: center;
+  // align-items: center;
 
   background-color: rgba(255, 255, 255, 0.8);
   height: 70px;
@@ -12,32 +12,72 @@
   box-shadow: rgb(0 0 0 / 10%) 0 5px 15px;
 
   transition: all .3s;
+
+  .nav-lt-box{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+
+    transition: left .3s;
+  }
+
+  .nav-logo{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url("../../assets/image/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  // .nav-title {
+  //   display: inline-block;
+  //   height: 50px;
+  // }
+
+  .nav-ul-wrap {
+    display: inline-block;
+  }
   
   .nav-ul{
     list-style: none;
 
+    position: absolute;
+    right: 100px;
+
     display: grid;
     grid-template-columns: repeat(3, 120px);
+    height: 100%;
     align-content: center;
     
     margin-bottom: unset;
 
     text-align: center;
 
-    li{
+    // li{
       
-    }
+    // }
   }
 
   .nav-icon {
+    display: none;
     position: absolute;
     right: 15px;
+    height: 100%;
+
+    line-height: 70px;
 
     transition: all .3s;
 
+    .antd-icon {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+    }
+
     &.is-checked {
       // transition: all .3s;
-      transform: rotate(90deg);
+      transform: rotate(180deg);
     }
   }
 }
