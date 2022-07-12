@@ -4,6 +4,7 @@ import "./index.less"
 
 //component
 import RightNav from '@components/rightNav';
+import { Link } from "react-router-dom";
 
 //icon
 import { MenuFoldOutlined } from "@ant-design/icons"

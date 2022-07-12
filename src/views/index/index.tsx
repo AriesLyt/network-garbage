@@ -17,7 +17,7 @@ interface Values {
 interface CollectionCreateFormProps {
   visible: boolean;
   imgArr: any;
-  onCreate: (values: Values) => void;
+  onCreate: (values: Values, type: String) => void;
   onCancel: () => void;
 }
 
@@ -51,7 +51,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
       }
       if (info.file.status === 'done') {
         imgArr.current = info.fileList.map((it: any) => {
-          return it.response
+          return it.response.replaceAll("\\", '/')
         })
         message.success(`${info.file.name} file uploaded successfully`);
       } else if (info.file.status === 'error') {
@@ -74,7 +74,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
           .validateFields()
           .then(values => {
             form.resetFields();
-            onCreate(values);
+            onCreate(values, "1");
           })
           .catch(info => {
             console.log('Validate Failed:', info);
@@ -92,7 +92,7 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
         <Form.Item
           label="Name"
           name="namepic"
-          rules={[{ required: true, message: '给个名' }]}
+          rules={[{ required: false, message: '给个名' }]}
         >
           <Input placeholder='给个名' />
         </Form.Item>
@@ -116,11 +116,12 @@ const CollectionCreateForm: React.FC<CollectionCreateFormProps> = ({
 const GarMain: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
-  const onCreate = (values: any) => {
+  const onCreate = (values: any, type: any) => {
     console.log('Received values of form: ', values);
 
     post('/sub', {
-      name: 123
+      type: type,
+      url: imgArr.current
     })
 
     setVisible(false);
@@ -138,73 +139,6 @@ const GarMain: React.FC = () => {
         </div>
         <div className='garmain-text'>
           仅个人用途，存放图片
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
         </div>
         <div>
           {
