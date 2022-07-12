@@ -4,6 +4,7 @@ import "./index.less"
 
 //component
 import RightNav from '@components/rightNav';
+import { Link } from "react-router-dom";
 
 export default function TopNav() {
 
@@ -40,10 +41,14 @@ export default function TopNav() {
       <div className={navClass.join(" ")} >
         <ul className="nav-ul">
           <li>
-            首页
+            <Link to='/'>
+              首页
+            </Link>
           </li>
           <li>
-            Show Show Way
+            <Link to='/ssw'>
+              Show Show Way
+            </Link>
           </li>
           <li>
             Can Can Need
