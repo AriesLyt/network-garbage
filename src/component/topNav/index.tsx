@@ -50,10 +50,14 @@ export default function TopNav() {
         </span>
           <ul className="nav-ul">
             <li>
-              首页
+              <Link to='/'>
+                首页
+              </Link>
             </li>
             <li>
-              Show Show Way
+              <Link to='/ssw'>
+                Show Show Way
+              </Link>
             </li>
             <li>
               Can Can Need

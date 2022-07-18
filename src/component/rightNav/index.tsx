@@ -1,4 +1,5 @@
 
+import { useNavigate } from 'react-router'
 // css
 import './index.less'
 
@@ -9,8 +10,11 @@ interface props {
 
 export default function RightNav({ rightShow, setRightShow }: props) {
 
+  const navigate = useNavigate()
+
   const toLink = (link: string): void => {
-    console.log(link)
+    navigate(link)
+    setRightShow(false)
   } 
 
   return (
@@ -22,7 +26,7 @@ export default function RightNav({ rightShow, setRightShow }: props) {
             <li onClick={()=>toLink('/')}>
               首页
             </li>
-            <li onClick={()=>toLink('Show Show Way')}>
+            <li onClick={()=>toLink('/ssw')}>
               Show Show Way
             </li>
             <li onClick={()=>toLink('Can Can Need')}>
